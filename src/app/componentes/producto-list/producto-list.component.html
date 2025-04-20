@@ -1,0 +1,13 @@
+<ion-list>
+  <ion-item *ngFor="let p of productos">
+    <ion-label>
+      <span *ngIf="!p.comprado">{{p.nombre}}</span>
+      <s *ngIf="p.comprado">{{p.nombre}}</s> 
+    </ion-label>
+    <ion-checkbox
+    [checked]="p.comprado"
+    (ionChange)="p.comprado = !p.comprado" 
+    slot="end"
+    aria-label="Checkbox que marca si el producto ya fue comprado" />
+  </ion-item>
+</ion-list>
